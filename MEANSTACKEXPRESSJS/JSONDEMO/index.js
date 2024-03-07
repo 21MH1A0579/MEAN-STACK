@@ -39,17 +39,24 @@ app.patch('/cse/updatebyid/:id',(req,res)=>{
    students[index]=stuupdate;
    fs.writeFile('./MEANSTACKEXPRESSJS/JSONDEMO/students.json',JSON.stringify(students),(err)=>{
     res.send("data Updated successfully");
+})  
 })
+// app.delete('/cse/deletebyid/:id',(req,res)=>{
+//     const id=req.params.id*1;
+//     let studelete=students.find(ele=>ele.id===id);
+//     let index=students.indexOf(studelete);
+//     console.log(index);
+//     students.splice(index,1);
+//     res.send("deleted successfully");
+ 
+//  })
 app.delete('/cse/deletebyid/:id',(req,res)=>{
-   const id=req.params.id*1;
-   let studelete=students.find(ele=>ele.id===id);
-   let index=students.indexOf(studelete);
-   console.log(index);
-   students.splice(index,1);
-   res.send("deleted successfully");
-
-})
-   
-})
-
+    const id=req.params.id*1;
+    let studelete=students.find(ele=>ele.id===id);
+    let index=students.indexOf(studelete);
+    students.splice(index,1);
+    fs.writeFile('./MEANSTACKEXPRESSJS/JSONDEMO/students.json',JSON.stringify(students),(err)=>{
+     res.send("data deleted successfully");
+ })  
+ })
 
