@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            /* border-color: red; */
+        }
+        th{
+            background-color: aqua;
+        }
+        td{
+            text-align: center;
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>DATA DISPLAYING</h1>
+        <hr>
+        <table id="data" border=1>
+            <tr>
+                <th>NAME</th>
+                <th>MOBILE</th>
+                <th>DEPT</th>
+                <th>EMAIL</th>
+            </tr>
+            <tbody>
+            </tbody>
+        </table>
+    </center>
+</body>
+<script>
+    const jsondata=[
+        {
+            "name":"chaitanya",
+            "mobile":"9573282201",
+            "dept":"CSE",
+            "email":"chaitanya@gmail.com"
+        },
+        {
+            "name":"manik",
+            "mobile":"1234567890",
+            "dept":"DS",
+            "email":"manik143@gmail.com"
+        },
+        {
+            "name":"bala",
+            "mobile":"9876543210",
+            "dept":"ECE",
+            "email":"bala@gmail.com"
+        },
+        {
+            "name":"bhargav",
+            "mobile":"9988776655",
+            "dept":"EEE",
+            "email":"bhargav@gmail.com"
+        },
+        {
+            "name":"seetu",
+            "mobile":"1234678922",
+            "dept":"AI&ML",
+            "email":"seeta@gmail.com"
+        }
+    ];
+    var tablebody=document.querySelector('#data');
+    jsondata.forEach(persons=>{
+        var row=document.createElement('tr');
+       Object.values(persons).forEach(values => {
+       var cell=document.createElement('td');
+       cell.textContent=values;
+       row.appendChild(cell);
+       });
+       tablebody.appendChild(row);
+}
+);
+
+
+
+
+</script>
+</html>
