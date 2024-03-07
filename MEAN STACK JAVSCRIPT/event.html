@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f1">
+        <label>SELECT SUBJECT:</label>
+        <select name="s1" onchange="cselist()">
+            <option value="Y.DURGA PRASAD">MST</option>
+            <option value="G.S.N.MURTHY">MC</option>
+            <option value="P.N.S.LAKSHMI">ML</option>
+            <option value="SATYA LAKSHMI">CD</option>
+            <option value="VEERA RAJU">CNS</option>
+        </select>
+        <!-- <input type="button" value="rocks" onclick="cselist()"/> -->
+    </form>
+    <script type="text/javascript">
+        function cselist(){
+            var list=document.f1.s1;
+            var s=list.options[list.selectedIndex].value;
+            alert("faculty name ="+s);
+        }
+    </script>
+</body>
+</html>

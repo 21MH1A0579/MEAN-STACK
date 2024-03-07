@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Signup Form</title>
+</head>
+<body>
+    <form>
+        <table cellpadding="15" cellspacing="5">
+            <tr>
+                <th colspan="2"><h2>SIGN UP</h2></th>
+            </tr>
+            <tr>
+            <tr>
+                <td><label for="username">Username:</label></td>
+                <td><input type="text" placeholder="enter username" autofocus required id="username" name="username"></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" id="password"  name="password"></td>
+            </tr>
+            <tr>
+                <td><label for="phone">Phone Number:</label></td>
+                <td><input type="number" id="phone" name="phone"></td>
+            </tr>
+        <tr>
+        <td><label for="address">Address:</label></td>
+        <td><textarea id="address" name="address" rows="4"></textarea></td>
+    </tr>
+
+            <tr>
+                <td><label for="gender">Gender:</label></td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="male"><label for="male">Male</label><br>
+                    <input type="radio" id="female" name="gender" value="female"><label for="female">Female</label><br>
+                    <input type="radio" id="other" name="gender" value="other"><label for="other">Other</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="branch">Select Branch:</label></td>
+                <td>
+                    <select id="branch" name="branch">
+                        <option >CSE</option>
+                        <option>ECE</option>
+                        <option >IT</option>
+                        <option>EEE</option>
+                        <option >MECH</option>
+                        <option>CIVIL</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="technicalSkills">Technical Skills:</label></td>
+                <td>
+                    <input type="checkbox" id="c" name="technicalSkills" value="C"><label for="c">C</label>
+                    <input type="checkbox" id="cpp" name="technicalSkills" value="C++"><label for="cpp">C++</label>
+                    <input type="checkbox" id="python" name="technicalSkills" value="Python"><label for="python">Python</label>
+                    <input type="checkbox" id="java" name="technicalSkills" value="Java"><label for="java">Java</label>
+                </td>
+            </tr>
+            <tr>
+                <tr>
+                    <td><label for="upload">Upload Certifcates</label></td>
+                   <td><input type="file" id="upload" multiple></td> 
+                </tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="submit"  formaction="index.html" formnovalidate value="Submit">
+                    <input type="reset" value="Reset">
+                    <input type="button" value="Cancel">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

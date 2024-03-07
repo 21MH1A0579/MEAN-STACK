@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f1">
+        <label>SELECT BRANCH</label><br>
+        <input type="radio" name="branch" value="Acoe-cse"/>CSE<br>
+        <input type="radio" name="branch" value="Acoe-ece"/>ECE<br>
+        <input type="radio" name="branch" value="Acoe-it"/>IT<br>
+        <input type="radio" name="branch" value="Acoe-Aiml"/>AIML<br>
+        <input type="radio" name="branch" value="Acoe-civil"/>CIVIL<br>
+        <input type="button" value="rocks" onclick="cseradio()"/>
+    </form>
+    <script type="text/javascript">
+        function cseradio(){
+            var b=document.f1.branch;
+            for(i=0;i<b.length;i++){
+                if(b[i].checked==true){
+                    alert("selected branch = "+b[i].value);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intro to async</title>
+</head>
+<body>
+    <script>
+        // function disp(){
+        //     console.log("Hai ");
+        // }
+        // disp();
+        // let p=async function (){
+        //     return "Welcome";
+        // }
+        // console.log(p());
+        let prom=new Promise((function(resolve,reject){
+            setTimeout(function(){
+                resolve("promise resolved");
+            },5000)
+        }))
+        async function disp(){
+            console.log("ACOE");
+            let res=await prom;
+            console.log(res);
+            console.log("BYE");
+        }
+       console.log("*******");
+       disp();
+        
+    </script>
+</body>
+</html>

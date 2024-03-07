@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            font-size: large;
+            font-weight: bold;
+            background-image: url('raininggif.gif');
+            background-size:cover;
+            
+        }
+        fieldset {
+            margin: 0 auto;
+            width: 50%;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        legend {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        #profileDetails {
+            margin: 0 auto;
+            width: 90%;
+        }
+        #profileDetails p {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        #legendImage img {
+            width: 200px;
+            height: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend id="legendImage" align="center"></legend>
+        <div id="profileDetails"> 
+            <table>
+                <tr st>
+                    <th colspan="2" align="center"><center>PERSONAL DETAILS:</center></th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td id="name"></td>
+                </tr>
+                <tr>
+                    <td>PIN NO</td>
+                    <td id="pin"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td id="email"></td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td id="phone"></td>
+                </tr>
+                <tr>
+                    <td>DOB</td>
+                    <td id="dob"></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td id="gender"></td>
+                </tr>
+                <tr>
+                    <td>College</td>
+                    <td id="college"></td>
+                </tr>
+                <tr>
+                    <td>Branch</td>
+                    <td id="branch"></td>
+                </tr>
+                <tr>
+                    <td>Courses</td>
+                    <td id="courses"></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td id="address"></td>
+                </tr>
+            </table>
+        </div> 
+    </fieldset>
+
+    <script>
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+        document.getElementById('name').innerText = getQueryParam('name');
+        document.getElementById('pin').innerText = getQueryParam('pin');
+        document.getElementById('email').innerText = getQueryParam('email');
+        document.getElementById('phone').innerText = getQueryParam('phone');
+        document.getElementById('dob').innerText = getQueryParam('dob');
+        document.getElementById('gender').innerText = getQueryParam('gender');
+        document.getElementById('college').innerText = getQueryParam('college');
+        document.getElementById('branch').innerText = getQueryParam('branch');
+        document.getElementById('courses').innerText = getQueryParam('courses');
+        document.getElementById('address').innerText = getQueryParam('address');
+        document.getElementById('legendImage').innerHTML = '<img src="' + getQueryParam('image') + '" alt="Profile Image">';
+    </script>
+</body>
+</html>

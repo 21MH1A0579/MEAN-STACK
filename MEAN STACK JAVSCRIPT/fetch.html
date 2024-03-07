@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // disp();
+        // function disp(){
+        //     const file1="cse.txt";
+        //     fetch(file1).then(r=>r.text()).then(t=>console.log(t));
+        // }
+        // let res=fetch("https://jsonplaceholder.typicode.com/users");
+        // res.then(x=>{return x.json()}).then(y=>{console.log(y[7].address.street)});
+        let k=prompt("Enter the city");
+        async function disp(){
+            //const file1="https://api.openweathermap.org/data/2.5/weather?q="+k+"&appid=832f4cd2d19db9710943b270621a53c9&units=metric";
+            const file2=`https://api.openweathermap.org/data/2.5/weather?q=${k}&appid=832f4cd2d19db9710943b270621a53c9&units=metric`;
+            fetch(file2).then(x=> x.json()).then(y=>{console.log(y.main.temp)});
+        }
+        disp();
+        
+       
+
+    </script>
+</body>
+</html>

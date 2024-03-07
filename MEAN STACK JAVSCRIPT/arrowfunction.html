@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Disp()
+        {
+            console.log("Welcome to javascript");
+        }
+        Disp();
+        let a=function(){
+            console.log("hai");
+            return "Welcome to functions";
+        }
+        console.log(a());
+        let b=function(x,y)
+        {
+            return x+y;
+        }
+        console.log(b(10,20));
+
+        let z=(x,y)=> (x+y);
+        console.log(z(10,20));
+        let d=z=>z;
+        console.log("Welecome to Arrow Function");
+        
+    </script>
+</body>
+</html>

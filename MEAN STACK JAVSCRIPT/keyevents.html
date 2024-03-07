@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Events</title>
+</head>
+<body>
+    <form name="f1">
+        <input type="text" name="tf1" placeholder="Enter Text" onkeyup="KeyDown()" onkeydown="KeyUp()" >
+
+
+    </form>
+    <script>
+        function KeyUp()
+        {
+          var p=document.f1.tf1;
+          p.style.backgroundColor="blue";
+        }
+        function KeyDown()
+        {
+          var p=document.f1.tf1;
+          p.style.backgroundColor="white";
+        }
+    </script>
+</body>
+</html>

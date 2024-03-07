@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <select id="s1">
+            <option>JAVA</option>
+            <option>MEAN STACK</option>
+            <option>MACHINE LEARNING</option>
+            <option>CPP</option>
+            <option>MOBILE COMPUTING</option>
+        </select>
+        <input type="button" value="delete" onclick="Del()">
+
+    </form>
+    <script>
+        function Del()
+        {
+            var k=document.getElementById("s1");
+            k.remove(k.selectedIndex);
+            alert("Item Deleted:");
+        }
+    </script>
+</body>
+</html>

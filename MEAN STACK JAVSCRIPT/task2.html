@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 100%;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url(movietcktbg.jpg);
+            background-repeat: no-repeat;
+            background-color:rgb(253, 253, 253);
+            background-size: cover;
+        }
+        h1{
+            color: rgb(244, 20, 20);
+            text-align: center;
+        }
+        input[type="date"]
+        {
+            font-weight: bold;
+        }
+        select{
+            font-weight: bold;
+        }
+        input[type="button"]{
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 1;
+
+  }
+  input[type="button"]:hover{
+    background-color: #4CAF50;
+  }
+    </style>
+</head>
+<body>
+    <h1><marquee>BOOK YOUR MOVIE TICKETS</marquee></h1>
+    <h2>SELECT CITY</h2>
+    <div class="row" style="font-weight: bold;">
+    <input type="radio" name="city" value="kakinada" onchange="theatres()">kakinada
+    <input type="radio" name="city" value="Rajamundry" onchange="theatres()">Rajamundry
+    <input type="radio" name="city" value="Peddhapuram" onchange="theatres()">Peddhapuram
+    </div>
+    <br><br>
+    <h3>SELECT THEATRE</h3>
+    <select id="s1" onchange="screening()">
+        <option>Select</option>
+    </select>
+    <h3>SELECT MOVIE</h3>
+    <select id="s2">
+        <option>Select</option>
+    </select>
+    <h3>SELECT DATE</h3>
+    <input type="date"  id="dt1" min="">
+    <h3>SELECT TIME</h3>
+    <select id="s3" onchange="selectdate()" >
+        <option>Select</option>
+        <option>11:30AM</option>
+        <option>2:30PM</option>
+        <option>6:30PM</option>
+        <option>9:30PM</option>
+    </select>
+    <br>
+    <br>
+    <input type="button" value="Book Tickets" onclick="Submitted()">
+    <h2 style="text-align: center;">CHALUMURI BRAHMENDRA<br>21MH1A0579</h2>
+    <script>
+        document.getElementById("dt1").min = new Date().toISOString().split("T")[0];
+        kkdtheatres=["SRMT INOX","DEVI MULTIPLEX","THIRUMULA","SANGEETA","LAXMI TALKIES"];
+        rajmuntheatres=["ASHOKA CINEMA","SWAMY","GEETHA APSRA","KUMARI TALKIES"];
+        peddtheatres=["LALITHA","VEERABHADRA","VIGNESWARA","SOBHA"];
+        alltheatres=[kkdtheatres,rajmuntheatres,peddtheatres];
+       moviesscreening=
+       {
+        "SRMT INOX":["EAGLE","I Hate You"],
+       "DEVI MULTIPLEX":["Ooru Peru BhairavaKona","I Hate Love"],
+       "THIRUMULA":["Suyra S/O Kishnan"],
+       "SANGEETA":["Oye","Varsham"],
+       "LAXMI TALKIES":["Ooru Peru BhairavaKona"],
+       "ASHOKA CINEMA":["Varsham"],
+       "SWAMY":["Suyra S/O Kishnan"],
+       "GEETHA APSRA":["Ooru Peru BhairavaKona","I Hate Love"],
+       "KUMARI TALKIES":["EAGLE","Ambajipeta MarriageBand"],
+       "LALITHA":["Bramayugam","Eagle"],
+       "VEERABHADRA":["Fighter"],
+       "SOBHA":["Ambajipeta MarriageBand","Bramayugam"],
+       "VIGNESWARA":["Madame Web","Fighter"]
+    }
+    var city;
+    var theatre;
+    var movie;
+    var date;  
+        function theatres()
+        {
+           var th=document.getElementsByName("city");
+           var x=document.getElementById("s1");
+           x.innerHTML="";
+           for(var i=0;i<th.length;i++)
+           {
+               if(th[i].checked)
+               {
+                 city=th[i].value;
+                  for(var j=0;j<alltheatres[i].length;j++)
+                  {
+                   
+                    var opt=new Option(alltheatres[i][j]);
+                    x.append(opt);
+
+                  }
+               }
+           }
+        }
+        function screening()
+        {
+               var k=document.getElementById("s1").value;
+               var l=document.getElementById("s2");
+               l.innerHTML=""
+               var x=[];
+               theatre=k;
+              // document.write(moviesscreening[k][0]);
+               for(var i=0;i<moviesscreening[k].length;i++)
+               {
+                  var opt=new Option(moviesscreening[k][i].toUpperCase());
+                  l.append(opt);
+               }
+                      
+        }
+        function selectdate(){
+    var k = document.getElementById("dt1").value;
+    var parts = k.split("-"); 
+    date = parts[2] + "/" + parts[1] + "/" + parts[0]; 
+    movie = document.getElementById("s2").value;
+        }
+
+        // function selectdate(){
+        //     var k=document.getElementById("dt1").value;
+        //     movie=document.getElementById("s2").value;
+        //     date=k;
+            
+        // }
+        function Submitted()
+        {
+            var z=document.getElementById("s3").value;
+            if(city==null||theatre==null||movie==null||date==null||z==null)
+            {
+                alert("Please Enter all Feilds");
+            }
+            else{
+                   if(confirm("Would You Like To Book Ticket"))
+                   {
+                    document.write("<h3 style='text-align: center; color: green;'>The Ticket is Booked for " + "<span style='color: green;'>" + movie + "</span>" + " movie on " + date + " at " + z + " in " + theatre + " Theatre, " + city.toUpperCase() + "<br><br><br><br>Thank You"+"<br><br>21MH1A0579</h3>");
+                    
+                   }
+                   
+            }
+        }
+    </script>
+       
+</body>
+</html>

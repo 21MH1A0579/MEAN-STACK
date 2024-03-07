@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let a1=[3,4,5,6,7,8];
+        // let a2=a1.map(function(x){return x*5});
+        // console.log(a2);
+        // let names=["chaitanya","bala","hemanth","satwik"];
+        // let a2=names.map(function(x){
+        //     return "cse "+x;
+        // })
+        // console.log(a2);console.log(a2);
+    //     let a1=[1,2,3,4,5,6];
+    //    let z=10;
+    //     function cse1(x,y){
+    //         return x+y;
+
+    //     }
+    //      a1=a1.reduce(cse1,z);
+    //     console.log(a1);
+    // let sal=20000;
+    // let exp=[5000,2000,1000,9000,1000];
+    // function rem(x,y)
+    // {
+    //     return (x+y);
+
+    // }
+  // console.log(exp.reduce(rem));
+    // exp=exp.reduce((x,y)=>(x-y),sal);
+    // console.log(exp);
+    // function disp(x,y=50)
+    // {
+    //     return x+y;
+    // }
+    // console.log(disp(10));
+    // console.log(disp(10,20));
+    // function disp1(x,y,...z)
+    // {
+    //     console.log(x);
+    //     console.log(y);
+    //     console.log(typeof(z));
+    //     console.log(z);
+    // }
+    // console.log(disp1("prasad","durga","acoe","hello","This is chaitanya"));
+    
+    function disp2(...x){
+        var sum=0;
+         x.forEach(element => {
+            sum+=element;
+            
+        });
+        return sum;
+    }
+    console.log(disp2(10,20,30,40,50,60));
+    </script>
+</body>
+</html>

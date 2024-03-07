@@ -1,0 +1,15 @@
+start express js
+================
+use command "npm init" to initialize nodejs into project
+use command "npm install express" to add express into project 
+create a js file named "index.js"
+and write CURD OPERATIONS
+use postman to check request is running or not
+
+
+CRUD OPERATIONS
+===============
+1)get - to retrive the existing data
+2)post- to create the new data
+3)put - to update the existing data
+4)delete- to delete the existing data

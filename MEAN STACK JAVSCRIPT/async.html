@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let count=false;
+       let prom=new Promise(function(resolve,reject){
+        if(count){
+            setTimeout(function(){ resolve("promise success")},2000);
+        }
+        else{
+           setTimeout(function(){ reject("promise fail")},4000);
+        }
+       });
+        async function disp(){
+            console.log("ACOE");
+            let p=await prom;
+            console.log(p);
+            console.log("BYE");
+        }
+        console.log("*******");
+        disp();
+
+
+    </script>
+</body>
+</html>

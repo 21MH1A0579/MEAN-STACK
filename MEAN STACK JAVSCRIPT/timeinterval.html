@@ -1,0 +1,39 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function disp()
+        {
+            alert("Welcome to Java Script");
+        }
+         setInterval(disp,10000);
+        //setTimeout(disp,10000);
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body onload="disp()">
+    <h1>WELCOME TO MST</h1>
+    <script type="text/javascript">
+        function disp()
+        {
+            var r=Math.round(Math.random()*255);
+            var g=Math.round(Math.random()*255);
+            var b=Math.round(Math.random()*255);
+            document.fgColor='rgb('+r+','+g+','+b+')';
+            console.log(r);
+            console.log(g);
+            console.log(b);
+            setTimeout(disp,1000);
+        }
+    </script>
+</body>
+</html>

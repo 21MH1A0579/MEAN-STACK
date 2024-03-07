@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="tf1">
+        <input type="button" value="rocks" onclick="Add()">
+        <br><br><br>
+        <select id="s1">
+            <option>Java</option>
+            <option>MeanStack</option>
+            <option>CPP</option>
+            <option>python</option>
+
+    </form>
+    <script>
+        function Add(){
+        var t=document.getElementById("tf1").value;
+        console.log(t);
+        var x=document.getElementById("s1");
+        var opt=new Option(t);
+        x.appendChild(opt);
+        }
+    </script>
+</body>
+</html>

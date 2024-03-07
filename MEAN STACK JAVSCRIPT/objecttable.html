@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="td1" style="border:2px solid black;">
+
+    </table>
+    <script>
+        let users=[
+            {
+                name:"prsad",
+                dept:"cse",
+                subj:"mst"
+            },
+            {
+                name:"chaintanya",
+                dept:"cse",
+                subj:"php"
+            },
+            {
+                name:"bala",
+                dept:"cse",
+                subj:"pyth"
+            }
+        ]
+        // let table1=document.getElementById("td1");
+        // for(let user of users){
+        // let tr1=document.createElement('tr');
+        // let td1=document.createElement('td');
+        // td1.textContent=user.name;
+        // tr1.appendChild(td1);
+        // let tr2=document.createElement('tr');
+        // let td2=document.createElement('td');
+        // td2.textContent=user.dept;
+        // tr1.appendChild(td2)
+        // table1.appendChild(tr1)
+        // }
+        let table=document.getElementById("td1");
+        for(var i=0;i<users.length;i++)
+        {
+            
+            let tr1=document.createElement('tr');
+            Object.values(users[i]).forEach(element => {
+                let td1=document.createElement('td');
+                td1.textContent=element;
+                tr1.appendChild(td1);
+
+            });
+            table.appendChild(tr1)
+        }
+       
+
+    </script>
+</body>
+</html>

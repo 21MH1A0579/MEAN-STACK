@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding-top: 50px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="text"],input[type="number"]{
+            border: 2px solid black;
+            font-weight: bold;
+            border-color: purple;
+        }
+        input[type="submit"]{
+            width: 100px;
+            font-size: large;
+            background-color: green;
+            font-weight: bold;
+            color: white;
+        }
+        table{
+            border: 2px solid black;
+            color: white;
+        }
+        td
+        {
+            text-align: center;
+            font-weight: bold;
+            border: 2px solid black;
+            color: black;
+            background-color: rgb(218, 218, 217);
+        }
+        th{
+            border: 2px solid black;
+            color: white;
+            background-color:green;
+        }
+    </style>
+    <!-- <style>
+        body {
+            padding-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        
+        h3 {
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"], input[type="number"] {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid purple;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            outline: none;
+        }
+        
+        input[type="submit"] {
+            width: 120px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: green;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: darkgreen;
+        }
+        
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            border: 2px solid black;
+            margin-top: 20px;
+            background-color: white;
+        }
+        
+        th, td {
+            border: 2px solid black;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        th {
+            background-color: green;
+            color: white;
+            font-weight: bold;
+        }
+        
+    </style> -->
+</head>
+<body>
+    
+    <h3>ENTER YOUR NAME</h3>
+    <input type="text" id="tf1">
+    <h3>ENTER YOUR PHONE  NUMBER</h3>
+    <input type="number" id="tf2">
+    <h3>ENTER YOUR DEPARTMENT</h3>
+    <input type="text" id="tf3">
+    <h3>ENTER YOUR COLLEGE</h3>
+    <input type="text" id="tf4">
+    <br><br>
+    <input type="submit" onclick="Submit()">
+    <br><br><br>
+
+    <table id="tab" cellspacing="5px">
+        <th>NAME</th>
+        <th>NUMBER</th>
+        <th>DEPARTMENT</th>
+        <th>COLLEGE</th>
+
+    </table>
+    <script>
+        let details=new Object();
+        function Submit()
+        {
+
+           details.name= document.getElementById("tf1").value;
+           document.getElementById("tf1").value="";
+           details.number= document.getElementById("tf2").value;
+           document.getElementById("tf2").value="";
+           details.dept= document.getElementById("tf3").value;
+           document.getElementById("tf3").value="";
+           details.college= document.getElementById("tf4").value;
+           document.getElementById("tf4").value="";
+           console.log(details);
+           if(!details.name || !details.number || !details.dept || !details.college)
+           {
+               alert("Please Enter all Feilds");
+           }
+           else{
+
+           var tab=document.getElementById("tab");
+           var row=document.createElement('tr');
+          
+           Object.values(details).forEach(element => {
+            console.log(typeof(element.toUpperCase()));
+            var td=document.createElement('td');
+            td.textContent=element.toUpperCase();
+            row.appendChild(td);
+           });
+           tab.appendChild(row);
+        }
+           
+
+        }
+        
+
+
+    </script>
+</body>
+</html>

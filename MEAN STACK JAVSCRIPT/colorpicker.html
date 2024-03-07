@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+</head>
+<body>
+    <form name="f1">
+        <input type="text" name="tf1">
+        <input type="text" name="tf2">
+        <input type="text" name="tf3">
+        <div id="d1" style="height: 150px;width: 150px;">
+        </div>
+        <input type="button" value="Submit" onclick="Display()">
+        <script>
+            function Display() {
+                var d = document.getElementById("d1");
+                var r = document.f1.tf1.value;
+                typeof(r);
+                var g = document.f1.tf2.value;
+                var b = document.f1.tf3.value;
+                d.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+            }
+        </script>
+    </form>
+</body>
+</html>

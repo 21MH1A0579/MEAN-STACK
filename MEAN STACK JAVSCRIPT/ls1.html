@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // localStorage.setItem('MST','YDP');
+        // localStorage.setItem('CD','VVP');
+        // console.log(localStorage.length);
+        // console.log(localStorage.getItem('CD'));
+        localStorage.setItem('NAME','PRASAD');
+        localStorage.setItem('PASS','CSE');
+        function check()
+        {
+            var n=prompt("ENTER NAME");
+            var p=prompt("ENTER PASSWORD");
+            var user=localStorage.getItem("NAME");
+            var pwd=localStorage.getItem("PASS");
+            if(n==user && p==pwd)
+            {
+                alert("Login Success");
+            }
+            else
+            {
+                alert("Login Failed");
+            }
+        }
+        check();
+    </script>
+</body>
+</html>

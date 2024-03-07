@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Student{
+            constructor(n,c)
+            {
+                this.name=n;
+                this.city=c;
+            }
+            
+            getstudent(){
+                console.log(this.name+" "+this.city);
+            }
+
+        }
+        class Data extends Student{
+            constructor(n,c,d,m){
+                 super(n,c);
+                this.dept=d;
+                this.mobile=m;
+                
+            }
+            getdata(){
+                console.log(this.name+" "+this.mobile+" "+this.city+" "+this.dept);
+
+            }
+            
+
+        }
+        let d=new Data("prasad","rjy",1234,"CSE");
+        d.getdata();
+    </script>
+</body>
+</html>

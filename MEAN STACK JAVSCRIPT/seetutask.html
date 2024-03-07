@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <label>ENTER YOUR NAME:</label>
+        <input type="text" id="tf1"/><br><br>
+        <label>list of subjects</label>
+        <select id="s1">
+        </select><br><br>
+        <label>ENTER YOUR MARKS:</label>
+        <input type="text" id="tf2"/><br><br>
+        <input type="submit" onclick="disp()">
+        <input type="button" value="display" onclick="tot()">
+        <h2 id="name"></h2>
+    <div><br><br>
+        <table id="tab1" cellpadding="15" cellspacing="5" border="2">
+            <th>SUBJECT</th>
+            <th>MARKS</th>
+            <tr>
+                <td>MST</td>
+                <td id="td0"></td>
+            </tr>
+            <tr>
+                <td >CN</td>
+                <td id="td1"></td>
+            </tr>
+            <tr>
+                <td >CNS</td>
+                <td id="td2"></td>
+            </tr>
+            <tr>
+                <td>Ml</td>
+                <td id="td3"></td>
+            </tr>
+            <tr>
+                <td>Mc</td>
+                <td id="td4"></td>
+            </tr>
+            <tr>
+                <td>TOTAL</td>
+                <td id="total"></td>
+            </tr>
+            <tr>
+                <td>PERCENTAGE</td>
+                <td id="percent"></td>
+            </tr>
+        </table>
+        </div>
+        <script type="text/javascript">
+        var n=document.getElementById("tf1");
+        var nam=n.value;
+        console.log(nam);
+        let sub=["MST","CD","CNS","ML","MC"]
+        let score=[]
+        var k=document.getElementById("s1");
+        sub.forEach(element => {
+            var opt=new Option(element);
+            k.append(opt);
+        });
+    function disp(){
+        console.log(nam);
+        document.getElementById("name").innerText=nam;
+        var d=document.getElementById("tf2");
+        var data=d.value;
+        console.log(data)
+        document.getElementById("tf2").value="";
+        for(var i=0;i<sub.length;i++){
+            if(k.value===sub[i]){
+                    var m="td"+i;
+                    var z=document.getElementById(m);
+                    z.innerText=data;
+                    score.push(parseInt(data));
+            }
+        }
+    }
+    //document.write("<table border=1 cellspacing=10><tr><th>SUBJECT NAME</th><th>MARKS</th></tr><tr><th>MST</th><td id=td0></td></tr><tr><th>CD</th><td id=td1></td></tr><tr><th>CNS</th><td id=td2></td></tr><tr><th>ML</th><td id=td3></td></tr><tr><th>MC</th><td id=td4></td></tr><tr><th>TOTAL</th><td id=total></td></tr><tr><th>PERCENTAGE</th><td id=percent></td></tr></table>");
+    function tot(){
+        var z=score.reduce((acum,x)=>(acum+x));
+        document.getElementById("total").innerText=z;
+        var k=(z/(score.length*100))*100;
+        document.getElementById("percent").innerText=k;
+        }
+    </script>
+</body>
+</html>

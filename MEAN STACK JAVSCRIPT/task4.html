@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        div {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            color: #333333;
+        }
+
+        select, input[type="text"], input[type="button"] {
+            margin: 5px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="button"] {
+            background-color: #4caf50;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 20%;
+        }
+
+        th, td {
+            border: 2px solid #333333;
+            padding: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: #ffffff;
+        }
+        
+    </style>
+</head>
+<body>
+    <div style="height: 250px;">
+
+    </div>
+    <div>
+        <form name="f1">
+            <label>Subject:</label>
+            <select  id="s1">
+            </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>Marks:</label>
+            <input type="number" id="t1"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value="Submit"  onclick="Submit()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value="Display" onclick="Total()">
+        </form><br><br>
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+            <tr>
+                <th>ML</th>
+                <td id="td0"></td>
+            </tr>
+            <tr>
+                <th>MNST</th>
+                <td id="td1"></td>
+            </tr>
+            <tr>
+                <th>CD</th>
+                <td id="td2"></td>
+            </tr>
+            <tr>
+                <th>CNS</th>
+                <td id="td3"></td>
+            </tr>
+            <tr>
+                <th>MC</th>
+                <td id="td4"></td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <td id="total"></td>
+            </tr>
+            <tr>
+                <th>Percentage</th>
+                <td id="Percentage"></td>
+            </tr>
+        </table>
+        <table>
+            <tr style="color: red;">
+                <td>
+                    FAILED SUBJECTS
+                </td>
+                <td id="fail" ></td>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript">
+        let Subject=['ML','MNST','CD','CNS','MC']
+        let marks=[]
+        let failsub=[];
+        var k=document.getElementById("s1");
+        Subject.forEach(element => {
+            var opt=new Option(element);
+            k.append(opt);
+        });
+
+        function Submit()
+        {
+            
+            var d=document.getElementById("t1");
+            var data=d.value;
+            if(data<=0)
+            {
+                alert("Please Enter the Marks GreaterThan Zero");
+            }
+            else if(data>100)
+            {
+                alert("Please Enter Marks LessThan 100");
+            }
+            else{
+                document.getElementById("t1").value="";
+            for(var i=0;i<Subject.length;i++)
+            {
+                if(k.value===Subject[i])
+                {
+                    
+                    var m="td"+i;
+                    var z=document.getElementById(m);
+                    if(z.innerText.length>=1)
+                    {
+                        alert("Already "+Subject[i]+" Data Inserted!")
+                    }
+                    else{
+                    z.innerText=data;
+                    marks.push(parseInt(data));
+                    if(parseInt(data)<35)
+                    {
+                        failsub.push(Subject[i]);
+                    }
+                    }
+                }
+            }}
+        }
+        function Total()
+        {
+            
+            if(marks.length<5)
+            {
+                alert("Please Enter All Subject Marks")
+            }
+            else{
+                var z=marks.reduce((acum,x)=>(acum+x));
+                document.getElementById("total").innerText=z;
+            var k=(z/500)*100;
+              document.getElementById("Percentage").innerText=k;
+            }
+            let m="";
+            failsub.forEach(element => {
+               m+=" "+element+",";   
+            });
+            var z=document.getElementById("fail");
+                z.innerText=m;
+            
+
+        }
+
+    </script>
+</body>
+</html>

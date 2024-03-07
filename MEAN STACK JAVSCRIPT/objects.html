@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        // let person={
+        //     name:"bala"
+        // }
+        // console.log(person.name);
+        // console.log(person["name"])
+        // console.log
+
+        // let cse=new Object();
+        // cse.name="acoe";
+        // cse.loc="kakinada";
+        // console.log(cse.name)
+        // console.log(cse['loc'])
+
+        // function student(name,mobile,dept){
+        //     this.na=name;
+        //     this.m=mobile;
+        //     this.d=dept;
+        // }
+        // var st=new student('bala',1234,'cse');
+        // console.log(st.m)
+        // console.log(st.na)
+        // console.log(st.d)/
+        
+        // let student={
+        //     name:"prasad",
+        //     dept:"cse",
+        //     marks:{
+        //         java:70,
+        //         pyth:60,
+        //         android:50
+        //     }
+        // }
+        // console.log(student.name)
+        // console.log(student.marks.pyth)
+
+        // let details={
+        //     name:"prasad",
+        //     city:"rjy",
+        //     disp:function(){
+        //         console.log("welcome to acoe")
+        //     }
+        //     ,add:function(x,y){
+        //         console.log(x+y)
+        //     }
+        // }
+        // details.disp()
+        // console.log(details.name)
+        // details.add(10,20)
+
+        // let courses=[
+        //     {
+        //         name:"java",
+        //         fee:2500
+        //     },
+        //     {
+        //         name:"pyth",
+        //         fee:3000
+        //     },
+        //     {
+        //         name:"php",
+        //         fee:2000
+        //     }
+        // ]
+        // console.log(courses[1].name)
+        // console.log(courses[1].fee)
+        // let demand=courses.filter(function(e){
+        //     return e.fee>2000;
+        // });
+        // var z=[];
+        // for(var i=0;i<courses.length;i++)
+        // {
+        //     if(courses[i].fee>2000)
+        //     {
+        //         z.push(courses[i].fee);
+        //     }
+        // }
+        // console.log(z);
+        // console.log(courses);
+        // console.log(demand);
+        let mobile={
+            brand:"Xaimoi",
+            color:"red",
+            price:40000
+        }
+       for(i in mobile)
+       {
+          console.log(i+":"+mobile[i])
+       }
+const cse={
+    name:"chaitanya",
+    mobile:"1234",
+    dept:"cse",
+    subject:"MST"
+}
+Object.keys(cse).forEach(element => {
+    console.log(element)
+    
+});
+Object.values(cse).forEach(element => {
+    console.log(element)
+    
+});
+    </script
+</body>
+</html>

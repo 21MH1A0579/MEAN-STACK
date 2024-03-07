@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <form>
+        <label for="tf1">ENTER NAME: </label>
+        <input type="text" id="tf1"/>
+        <!-- <input type="button" value="rocks" onclick="disp()"/> -->
+        <input type="button" value="rocks" id="b1"/>
+    </form>
+    <script type="text/javascript">
+        // function disp(){
+            // var t=document.getElementById("tf1");
+            // var s=t.value;
+            // alert(s);
+        // }
+        // var b=document.getElementById("b1");
+        // b1.onclick=disp;
+        // function disp(){
+        //     var t=document.getElementById("tf1");
+        //     var s=t.value;
+        //     alert(s);
+        // }
+        var b=document.getElementById("b1");
+        b1.addEventListener("click",disp);
+        function disp(){
+            var t=document.getElementById("tf1");
+            var s=t.value;
+            alert(s);
+        }
+    </script>
+</body>
+</html>

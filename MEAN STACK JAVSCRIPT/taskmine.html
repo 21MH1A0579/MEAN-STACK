@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f1">
+        <table align="center">
+          <th colspan="2">Sign Up</th>  
+          <tr>
+            <td><label>NAME:</label></td>
+            <td><input type="text" id="tf1" placeholder="Enter name"></td>
+          </tr>
+          <tr>
+            <td><label>PIN NO:</label></td>
+            <td><input type="text" id="tf2" placeholder="Enter PIN Number"></td>
+          </tr>
+          <tr>
+            <td><label>EMAIL:</label></td>
+            <td><input type="text" id="tf3" placeholder="enter email address"></td>
+          </tr>
+          <tr>
+            <td><label>PHONE NUMBER:</label></td>
+            <td><input type="text" id="tf4"></td>
+          </tr>
+          <tr>
+            <td><label>DOB:</label></td>
+            <td><input type="date" id="tf5"></td>
+          </tr>
+          <tr>
+            <td><label>Gender:</label>
+                <td>
+            <input type="radio" name="gender"  value="male">male
+            <input type="radio" name="gender" value="female">Female</td>
+          </tr>
+          <tr>
+            <td><label>College:</label></td>
+            <td><input type="radio" name="college"  value="acoe">ACOE
+            <input type="radio" name="college" value="acet">ACET
+             <input type="radio" name="college" value="aec">AEC</td>
+          </tr>
+          <tr>
+            <td>BRANCH</td>
+            <td>
+            <select id="s1" name="branch">
+                <option>CSE</option>
+                <option>IT</option>
+                <option>EEE</option>
+                <option>ECE</option>
+                <option>AGRI</option>
+                <option>MECH</option>
+            </select> </td>
+          </tr>
+          <tr>
+            <td><label>Course:</label></td>
+            <td>
+                <input type="checkbox" name="java" value="java">Java
+                <input type="checkbox" name="python" value="python">Python
+                <input type="checkbox" name="cpp" value="cpp">CPP
+                <input type="checkbox" name="Javascript" value="JavaScript">JavaScript
+                <input type="checkbox" name="Dart" value="Dart">Dart
+            </td>
+          </tr>
+          <tr>
+            <td>ADDRESS:</td>
+            <td><textarea rows="3" id="tf6"></textarea></td>
+          </tr>
+          <tr>
+            <td>IMAGE:</td>
+            <td><input type="file" name="file"></textarea></td>
+          </tr>
+          <tr>
+            <td>
+                <input type="submit" onclick="Submit()" >
+            </td>
+            <td>
+                <input type="reset">
+            </td>
+          </tr>
+        </table>
+    </form>
+    <script>
+    function Submit()
+    {
+        var name=document.getElementById("tf1").value;
+        var pin=document.getElementById("tf2").value;
+        var email=document.getElementById("tf3").value;
+        var phone=document.getElementById("tf4").value;
+        var dob=document.getElementById("tf5").value;
+        var g=document.f1.gender;
+            for(i=0;i<g.length;i++){
+                if(g[i].checked==true){
+                    var gender=g[i].value;
+                }
+            }
+       
+        var c=document.f1.college;
+        for(i=0;i<c.length;i++)
+        {
+            if(c[i].checked==true)
+            {
+                var college=c[i].value;
+            }
+        } 
+        var courses;
+        if(document.f1.java.checked)
+        {
+            courses+=f1.java.value;
+        }
+        if(document.f1.python.checked)
+        {
+            courses+=f1.python.value;
+        }
+        if(document.f1.cpp.checked)
+        {
+            courses+=f1.cpp.value;
+        }
+        if(document.f1.Javascript.checked)
+        {
+            courses+=f1.Javascript.value;
+        }
+        if(document.f1.Dart.checked)
+        {
+            courses+=f1.Dart.value;
+        }
+        var branch=document.getElementById("s1").value;
+        var address=document.getElementById("tf6").value;
+        var file=document.f1.file.value;
+        document.write(name,pin,email,phone,dob,address,file,gender,college,branch,courses);//,gen,coll,branch,courses
+    }
+    </script>
+</body>
+</html>

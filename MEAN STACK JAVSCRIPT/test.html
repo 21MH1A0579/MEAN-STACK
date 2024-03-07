@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>SELECT THE COUNTRY</td>
+            <td><select id="country" onchange="countryselect()">
+                <option>select the country</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>SELECT THE STATE</td>
+            <td><select id="state" onchange="stateselect()">
+                <option>select the state</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>SELECT THE CITY</td>
+            <td><select id="city" onchange="cityselect()">
+                <option>select the city</option>
+            </select></td>
+        </tr>
+    </table>
+    <script>
+        var selectedcountry;
+        var selectedstate;
+        var selectedcity;
+var headers = new Headers();
+headers.append("X-CSCAPI-KEY", "NHhvOEcyWk50N2Vna3VFTE00bFp3MjFKR0ZEOUhkZlg4RTk1MlJlaA==");
+
+var requestOptions = {
+   method: 'GET',
+   headers: headers,
+   redirect: 'follow'
+};
+
+fetch("https://api.countrystatecity.in/v1/countries", requestOptions).then(x=>{return x.json()}).then(y=>{
+    z=document.getElementById("country");
+    y.forEach(element => {
+     var option=new Option(element.iso2+" "+element.name);
+     z.append(option);
+    //console.log(element)
+    });
+})
+
+function countryselect(){
+    document.getElementById("state").innerHTML="select the state";
+        selectedcountry=document.getElementById("country").value;
+        fetch(`https://api.countrystatecity.in/v1/countries/${selectedcountry.substring(0,2)}/states`, requestOptions).then(x=>{return x.json()}).then(y=>{
+            z=document.getElementById("state");
+            y.forEach(element => {
+     var option=new Option(element.iso2+" "+element.name);
+     z.append(option);
+       // console.log(element);
+    });
+        })
+        }
+
+ function stateselect()
+ {
+    document.getElementById("city").innerHTML="select the city";
+    selectedstate=document.getElementById("state").value;
+    //console.log(selectedstate);
+    fetch(`https://api.countrystatecity.in/v1/countries/${selectedcountry.substring(0,2)}/states/${selectedstate.substring(0,2)}/cities`, requestOptions).then(x=>{return x.json()}).then(y=>{
+     
+      z=document.getElementById("city");
+            y.forEach(element => {
+     var option=new Option(element.name);
+     z.append(option);
+    });    
+    })
+ }
+ function cityselect(){
+    selectedcity=document.getElementById("city").value;
+    console.log(selectedcity);
+ }
+    </script>
+</body>
+</html>

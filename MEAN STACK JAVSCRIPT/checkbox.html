@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f1">
+        <label>Select Skills</label>
+        <input type="checkbox" name="cb1" value="java">java
+        <input type="checkbox" name="cb2" value="python">python
+        <input type="checkbox" name="cb3" value="android">android
+        <input type="checkbox" name="cb4" value="meanstack">meanstack
+         <input type="button" value="rocks" onclick="Display()">
+         <script>
+            function Display(){
+                var s="Skills : ";
+                if(document.f1.cb1.checked)
+                {
+                    s=+s+f1.cb1.value;
+                }
+                if(document.f1.cb2.checked)
+                {
+                    s=+s+f1.cb2.value;
+                }
+                if(document.f1.cb3.checked)
+                {
+                    s=s+f1.cb3.value;
+                }
+                if(document.f1.cb4.checked)
+                {
+                    s=s+f1.cb4.value;
+                }
+                alert(s);
+                
+
+            }
+         </script>
+    </form>
+</body>
+</html>

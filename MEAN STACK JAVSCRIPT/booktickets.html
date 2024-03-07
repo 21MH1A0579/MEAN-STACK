@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Movie Tickets</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header style="background-color: w;">
+        <h1>Book Your Movie Tickets</h1>
+    </header>
+    <main>
+        <section class="city-selection">
+            <h2>Select City</h2>
+            <div class="radio-buttons">
+                <input type="radio" id="kakinada" name="city" value="kakinada" onchange="theatres()">
+                <label for="kakinada">Kakinada</label>
+                <input type="radio" id="rajamundry" name="city" value="Rajamundry" onchange="theatres()">
+                <label for="rajamundry">Rajamundry</label>
+                <input type="radio" id="peddhapuram" name="city" value="Peddhapuram" onchange="theatres()">
+                <label for="peddhapuram">Peddhapuram</label>
+            </div>
+        </section>
+        <section class="theatre-selection" id="theatre-section">
+            <h2>Select Theatre</h2>
+            <select id="s1" onchange="screening()">
+                <option>Select</option>
+            </select>
+        </section>
+        <section class="movie-selection" id="movie-section">
+            <h2>Select Movie</h2>
+            <select id="s2">
+                <option>Select</option>
+            </select>
+        </section>
+        <section class="date-time-selection">
+            <h2>Select Date and Time</h2>
+            <input type="date" id="dt1" min="" onchange="selectdate()">
+            <select id="s3" onchange="checkAvailability()">
+                <option>Select</option>
+                <option>11:30AM</option>
+                <option>2:30PM</option>
+                <option>6:30PM</option>
+                <option>9:30PM</option>
+            </select>
+            <span id="availability-message"></span>
+        </section>
+        <section class="button-section">
+            <button id="book-button" onclick="bookTickets()" disabled>Book Tickets</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

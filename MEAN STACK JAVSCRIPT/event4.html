@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f1">
+        <input type="file" name="file1"/>
+        <input type="button" value="rocks" onclick="disp()"/>
+    </form>
+    <div id="d1" style="height: 200px;width: 200px;background-color: blue;">
+        <img id="pic1" height="200px" width="200px" />
+    </div>
+    <script type="text/javascript">
+        function disp(){
+            var z=document.f1.file1;
+            var path=z.value;
+            console.log(path);
+            var p=document.getElementById("pic1");
+            var c=path.substring(path.lastIndexOf('h')+1);
+            console.log(c);
+            p.src =c; // Update src attribute to display the image
+        }
+    </script>
+</body>
+</html>

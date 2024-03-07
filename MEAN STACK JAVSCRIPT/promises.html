@@ -1,0 +1,54 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let prom=new Promise(function(resolve,reject){
+
+        // });
+        // console.log(prom);
+        let count=true;
+        let p1=new Promise(function(resolve,reject){
+            if(count){
+                resolve( "welcome to acoe");
+            }
+            else{
+                reject("bye to cse");
+            }
+        });
+        console.log(p1);
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let bool=false;
+        let promise=new Promise(function(res,rej)
+        {
+            if(bool)
+            {
+                res("Success!");
+            }
+            else{
+                rej("error occurs!!!!");
+            }
+        });
+        
+        promise.then(function(res){
+            console.log(res);
+        });
+        promise.catch(function(res){
+            console.log(res);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    margin-top: 10%;
+    padding: 0;
+    text-align: center;
+    align-items: center;
+  }
+  .containers{
+    display: flex;
+    flex-direction: row;
+  }
+  .container0,.container1,.container2{
+    flex-direction: row;
+    color: white;
+   margin-top: 15px;
+    /* animation: changebackground 2s infinite; */
+    background-image:linear-gradient(to bottom left,
+        rgb(30, 25, 25),rgb(82, 3, 82),rgb(108, 16, 62),rgb(120, 52, 28)
+    );
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin: auto;
+   
+  }
+  input[type="text"]{
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    height: 45px;
+    width: 75%;
+  }
+  h1 {
+    margin-bottom: 10px;
+  }
+  table{
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 100px;
+    align-items: center;
+    background-image:linear-gradient(to bottom left,
+        rgb(30, 25, 25),rgb(82, 3, 82),rgb(108, 16, 62),rgb(120, 52, 28)
+    );
+   
+  }
+  td{
+    font-weight: bold;
+    padding: 10px;
+  }
+  .temp {
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .weather,
+  .high-low {
+    margin-bottom: 5px;
+  }
+  
+  @keyframes changebackground {
+    0%{background-color: aqua;}
+    25%{background-color:deepskyblue;}
+    50%{background-color: darkturquoise;}
+    75%{background-color: hotpink;}
+    100%{background-color: darkblue;}
+    
+  }

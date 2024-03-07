@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .task-body
+        {
+            
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: #00abf0;
+            font-size: 20px;
+        }
+        .input-txt
+        {
+            font-size: 20px;
+           margin-bottom: 10px;
+            border: 2px solid #00abf0;
+            background-color: transparent;
+            color: #00abf0;
+        }
+        .btn-submit
+        {
+          margin-right: 200px;
+            background-color: #00abf0;
+            border: 2px solid;
+            color: #081b29;
+            font-weight: 1000;
+        }
+        .btn-submit:hover
+        {
+            background-color:green;
+            color: #00abf0;
+        }
+        .btn-winner
+        {
+        
+            background-color: #00abf0;
+            border: 2px solid;
+            color: #081b29;
+            font-weight: 1000;
+        }
+        .btn-winner:hover
+        {
+            background-color:orange;
+            color: #00abf0;
+        }
+    
+    </style>
+</head>
+<body class="task-body"> 
+    <form name="f1">
+        <label>NAME : </label>
+        <input type="text" name="name" placeholder="ENTER NAME" id="tf1" value="" class="input-txt"><br>
+        <input type="button" value="submit" onclick="disp()" class="btn-submit">
+        <input type="button" value="Winner" onclick="disp1()" class="btn-winner">
+    </form>
+    <br><br>
+    <table cellspacing="20px" border="1" style="margin-left: 35px; width: 300px;" >
+        <tr>
+            <th>NAMES:</th>
+            <th>WINNER:🥳🥳</th>
+        </tr>
+        <tr style="text-align: center;">
+            <td><label id="txt"></label></td>
+            <td><label id="win"></label></td>
+        </tr>
+    </table>
+    <label style="font-weight: bold;color: #000;">CHALUMURI BRAHMENDRA ->21MH1A0579</label>
+    <script type="text/javascript">
+        let courses=[];
+        let courses1=[];
+        function disp() {
+    let d = document.getElementById("tf1").value; 
+    courses.push(d);
+    console.log(d);
+    
+    let allCourses ="";
+    for(let i = 0; i < courses.length; i++) {
+        allCourses += courses[i] + "<br>";
+    }
+    document.getElementById("txt").innerHTML = allCourses;
+     }
+
+        function disp1()
+        {
+            let l=courses.length;
+            let r=Math.round(Math.random()*l);
+            let i=courses1.includes(r);
+            courses1.push(r);
+            console.log(courses1);
+            if(i!=true && courses[r]!=null)
+            {
+                console.log(courses[r]);
+                document.getElementById("win").innerText=courses[r];
+            }
+            else
+            {
+                console.log();
+            }
+        }
+    </script>
+</body>
+</html>

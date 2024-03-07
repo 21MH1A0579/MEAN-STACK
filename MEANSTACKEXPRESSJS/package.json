@@ -1,0 +1,14 @@
+{
+  "name": "firstexpress",
+  "version": "1.0.0",
+  "description": "Y DURGA PRASAD CSE LAB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ACOE CSE",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3"
+  }
+}

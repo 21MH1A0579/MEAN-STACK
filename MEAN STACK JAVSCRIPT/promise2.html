@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const count=false;
+        let p2=new Promise(function(resolve,reject){
+            if(count){
+                resolve("Promise Fullfilled Welcome to cse");
+            }
+            else{
+                reject("Promise rejected bye to cse");
+            }
+            
+        });
+        p2.then(function(cse){
+            console.log(cse);
+        });
+        p2.catch(function(cse){
+            console.log(cse);
+        });
+        //console.log(p2);
+    </script>
+</body>
+</html>

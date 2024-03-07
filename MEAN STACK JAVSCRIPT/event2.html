@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+</head>
+<body>
+   <form>
+    <input type="button" value="Blue" id="b1" onclick="cseblue()"/>
+    <input type="button" value="Green" id="b2" onclick="csegreen()"/><br><br>
+   </form>
+   <div id="d1" style= "height:150px; width:150px;background-color: red">
+   </div>
+   <script type="text/javascript">
+    function cseblue(){
+        var c1=document.getElementById("d1");
+        c1.style.backgroundColor="blue";
+    }
+    function csegreen(){
+        var c2=document.getElementById("d1");
+        c2.style.backgroundColor="green";
+    }
+   </script>
+</body>
+</html>

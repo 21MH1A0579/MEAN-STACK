@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="align-content: center;">
+    <script type="text/javascript">
+    document.write( "<h1>Welcome to javascript</h1>");
+
+    </script>
+    <script>
+        var a=parseInt(prompt("Enter the a value"));
+        var b=parseInt(prompt("Enter the b value"));
+        table(a,b);
+        function table(a,b)
+        {
+            document.write("<center><table border='1' cellpadding='10'>")
+            for(var i=1;i<=b;i++)
+            {
+                console.log(a+"x"+i+"="+a*i);
+                document.write("<tr ><td>"+a+"</td>");
+                document.write("<td >x</td>");
+                document.write("<td>"+i+"</td>");
+                document.write("<td>=</td>");
+                document.write("<td>"+a*i+"</td></tr>");
+
+            }
+            document.write("</table></center>")
+        }
+    
+    </script>
+</body>
+</html>

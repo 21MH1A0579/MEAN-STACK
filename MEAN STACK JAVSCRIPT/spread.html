@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //spread operator
+        // let skills=["python","java","php","android"]
+        // console.log(...skills)
+        // let name="DURGA PRASAD";
+        // console.log(...name)
+        // let a1=[10,20,30];
+        // let a2=[...a1,40,50,60];
+        // console.log(a2)
+        //max element using spread operator
+        // let marks=[50,60,89,78,56,15,54]
+        // let max=Math.max(...marks)
+        // console.log(max)
+        let o1=
+            {
+                name:"parsad",
+                city:"rjy"
+            }
+        let o2={
+            mobile:"1234",
+            email:"chaitanya@gmail.com"
+        }
+        console.log(o1);
+        console.log(o2)
+       let target={...o1,...o2}
+       console.log(target)
+    // let ob1={
+    //     name:"prasad",
+    //     city:"Rjy"
+    // }
+    // console.log(ob1)
+    // let ob2={...ob1}
+    // console.log(ob2)
+    // console.log(ob1==ob2)
+    // ob1.dept="CSE";
+    // console.log(ob1)
+    // console.log(ob2)
+    // swapping the value of variables
+    // let a=10;
+    // let b=20;
+    // [a,b]=[b,a];
+    // console.log(a+" "+b)
+    // //swap the elements in an array
+    // let colors=["green","orange","pink","red","black"];
+    // [colors[0],colors[colors.length-1]]=["black","green"];
+    // console.log(...colors)
+
+    // assigning variables for array elements
+    // let colors=["green","orange","pink","red","black"];
+    // const [c1,c2,c3,c4,c5]=colors;
+    // console.log(c1+" "+c2+" "+c5)
+  
+    // const {name,mobile,dept,sub="no subject"}=p1;
+    // console.log(name);
+    // console.log(mobile);
+    // console.log(dept);
+    // console.log(sub);
+// function parametrs
+// let p1={
+//         name:"prasad",
+//         mobile:"1234",
+//         dept:"cse",
+//         sub:"mst"
+//     }
+//     let p2={
+//         name:"durga",
+//         mobile:"4321",
+//         dept:"aiml"
+//     }
+//    function Disp({name,mobile,dept,sub="no subject"})
+//    {
+//     console.log(`${name}`);
+//     console.log(`${mobile}`);
+//     console.log(`${dept}`);
+//     console.log(`${sub}`);
+//    }
+//    Disp(p1);
+//    const profile=["durga","prasad"];
+//    function rocks([fname,lname])
+//    {
+//    // console.log("my name is ${}'');
+//    }
+//    rocks(profile);
+   // distructing nested object properties
+//    let address={
+//     street:"sriram nagar",
+//     city:"rjy",
+//     state:"AP"
+//    }
+//    let person={
+//     name:"prasad",
+//     age:40,
+//     address
+//    }
+  
+//    let {name,age,address: {city}}=person;
+//    //console.log(n1+" "+a1+" "+city);
+//    console.log(name+age+city);
+//  var object={};
+//     for(let x=0;x<2;x++)
+//     {
+//          object[x]={
+//     name:prompt("Enter name"),
+//     mobile:prompt("Enter number"),
+//     age:prompt("Enter Age"),
+//         };
+//         console.log(object);
+//   }
+  
+
+
+    </script>   
+</body>
+</html>

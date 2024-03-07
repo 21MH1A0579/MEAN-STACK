@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f1">
+        <table align="center">
+          <th>Sign Up</th>  
+          <tr>
+            <td><label>NAME:</label></td>
+            <td><input type="text" id="tf1" placeholder="Enter name"></td>
+          </tr>
+          <tr>
+            <td><label>PIN NO:</label></td>
+            <td><input type="text" id="tf2" placeholder="Enter PIN Number"></td>
+          </tr>
+          <tr>
+            <td><label>EMAIL:</label></td>
+            <td><input type="text" id="tf3" placeholder="enter email address"></td>
+          </tr>
+          <tr>
+            <td><label>PHONE NUMBER:</label></td>
+            <td><input type="number" placeholder="enter mobile number" id="tf4"></td>
+          </tr>
+          <tr>
+            <td><label>DOB:</label></td>
+            <td><input type="date" id="tf5"></td>
+          </tr>
+          <tr>
+            <td><label>Gender:</label></td>
+            <td>
+              <input type="radio" name="gender" value="male">Male
+              <input type="radio" name="gender" value="female">Female
+            </td>
+          </tr>
+          <tr>
+            <td><label>College:</label></td>
+            <td>
+              <input type="radio" name="college" value="ACOE">ACOE
+              <input type="radio" name="college" value="ACET">ACET
+              <input type="radio" name="college" value="AEC">AEC
+            </td>
+          </tr>
+          <tr>
+            <td>BRANCH</td>
+            <td>
+              <select id="s1" name="branch">
+                <option>CSE</option>
+                <option>IT</option>
+                <option>EEE</option>
+                <option>ECE</option>
+                <option>AGRI</option>
+                <option>MECH</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label>Course:</label></td>
+            <td>
+              <input type="checkbox" name="java" value="JAVA ">Java
+              <input type="checkbox" name="python" value="PYTHON ">Python
+              <input type="checkbox" name="cpp" value="CPP ">CPP
+              <input type="checkbox" name="JavaScript" value="JAVSCRIPT ">JavaScript
+              <input type="checkbox" name="Dart" value="DART ">Dart
+            </td>
+          </tr>
+          <tr>
+            <td>ADDRESS:</td>
+            <td><textarea rows="3" id="tf6"></textarea></td>
+          </tr>
+          <tr>
+            <td>IMAGE:</td>
+            <td><input type="file" name="file"></td>
+          </tr>
+          <tr>
+            <td><input type="button" value="Submit" onclick="submitForm()"></td>
+            <td><input type="reset"></td>
+          </tr>
+        </table>
+    </form>
+</body>
+</html>
