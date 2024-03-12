@@ -7,9 +7,9 @@ app.use(express.json());
 app.listen(3000,()=>{
     console.log("server is running at 3000");
 })
-// app.get('/',(req,res)=>{
-//     res.send("welcome to Homepage");
-// })
+app.get('/cse',(req,res)=>{
+    res.send("welcome to Homepage");
+})
 app.get('/cse/studentsdata',(req,res)=>{
     res.json(students);
 });
@@ -41,15 +41,6 @@ app.patch('/cse/updatebyid/:id',(req,res)=>{
     res.send("data Updated successfully");
 })  
 })
-// app.delete('/cse/deletebyid/:id',(req,res)=>{
-//     const id=req.params.id*1;
-//     let studelete=students.find(ele=>ele.id===id);
-//     let index=students.indexOf(studelete);
-//     console.log(index);
-//     students.splice(index,1);
-//     res.send("deleted successfully");
- 
-//  })
 app.delete('/cse/deletebyid/:id',(req,res)=>{
     const id=req.params.id*1;
     let studelete=students.find(ele=>ele.id===id);
