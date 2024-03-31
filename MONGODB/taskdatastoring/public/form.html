@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('5192479.jpg');
+            background-position: fixed;
+        }
+
+        form {
+            background-color:white;
+            opacity: 1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"], input[type="button"] {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover, input[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border: 2px solid #4caf50;
+        }
+
+        input[type="submit"], input[type="button"] {
+            width: 100%;
+        }
+        h5{
+           color:white;
+        }
+    </style>
+</head>
+<body>
+   <form action="/postuserdata" method="post" onsubmit="return validate()">
+    <table>
+        <th colspan="2">STUDENT DATA</th>
+    <tr>
+    <td><h3>Roll Number:</h3></td>
+    <td><input type="text" id="urollnumber" name="urollnumber"></td>
+    </tr>
+    <tr>
+        <td><h3>Name:</h3></td>
+        <td><input type="text" id="uname" name="uname"></td>
+    </tr>
+    <tr>
+     <td><h3>Branch:</h3></td>
+   <td> <input type="text" id="ubranch" name="ubranch"></td>
+    </tr>
+    <tr>
+    <td><h3>Phone:</h3></td>
+    <td><input type="text" id="uphone" name="uphone"></td>
+    </tr>
+    <tr>
+    <td><h3>Email:</h3></td>
+    <td><input type="text" id="uemail" name="uemail"></td>
+    </tr>
+    <tr>
+   <td> <input type="submit"></td>
+    <td><input type="button" value="display" onclick="navigate()"></td></tr>
+</table>
+   </form>
+   <footer style="text-align: center;">
+    <h5>21MH1A0579</h5>
+    <h5>21MH1A0595</h5>
+    <h5>21MH1A0594</h5>
+  </footer>
+</body>
+<script>
+    function validate() {
+        var rollNumber = document.getElementById("urollnumber").value;
+        var name = document.getElementById("uname").value;
+        var branch = document.getElementById("ubranch").value;
+        var phone = document.getElementById("uphone").value;
+        var email = document.getElementById("uemail").value;
+
+        if (rollNumber == "" || name == "" || branch == "" || phone == "" || email == "" ) {
+            alert("All fields must be filled out");
+            return false;
+        }
+        else if(rollNumber.length!=10 ||phone.length!=10){
+            alert("rollnumber and phone number size must be 10 Digits");
+            return false;
+
+        }
+    }
+    function navigate(){
+        window.location.href="/userdata";
+    }
+</script>
+</html>

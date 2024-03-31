@@ -1,0 +1,17 @@
+{
+  "name": "crudcse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "chaitanya",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.1",
+    "express-fileupload": "^1.5.0",
+    "mongoose": "^8.2.3",
+    "pug": "^3.0.2"
+  }
+}

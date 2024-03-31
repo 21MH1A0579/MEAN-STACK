@@ -1,0 +1,51 @@
+html
+    head 
+        style.
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+            }
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin-top: 50px;
+            }
+            h1 {
+                color: #333;
+                margin-bottom: 20px;
+            }
+            img {
+                border-radius: 50%;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+                margin-right: 20px;
+            }
+            table {
+                border-collapse: collapse;
+                width: 400px;
+                margin-top: 20px;
+            }
+            table ,th,td,tr{
+                border:2px solid black;
+            }
+            th{
+                color:green;
+            }
+           
+    body
+        div.container
+            div
+                img(src=file height=200 width=200)
+                h1 Login Success #{name}
+                table
+                    tr
+                        th MACHINE LEARNING
+                        th MEANSTACK
+                        th CNS
+                        th CD
+                    tr
+                        td= data.ml
+                        td= data.mnst
+                        td= data.cns 
+                        td= data.cd

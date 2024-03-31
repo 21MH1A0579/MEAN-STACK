@@ -1,0 +1,13 @@
+html
+    head 
+        title="iteration in pug"
+    style.
+        table,tr,td 
+            {
+                border: 2px solid black;
+            }
+    body
+        table 
+            each i in sub
+                tr
+                    td=i
